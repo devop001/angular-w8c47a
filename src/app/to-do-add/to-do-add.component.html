@@ -1,0 +1,46 @@
+<div mdbModal  #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Add New Task</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form  [formGroup]="taskForm" (ngSubmit)="Add()" class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="orangeForm-name" class="form-control validate" [formControl]="signupFormModalName"  formControlName="taskName"
+            mdbInput>
+          <label data-error="wrong" data-success="right" for="orangeForm-name">Task Name</label>
+        </div>
+        <div class="md-form mb-5">
+          <div class="md-form">
+  <textarea type="text" id="form7" formControlName="taskDesc" class="md-textarea form-control" mdbInput></textarea>
+  <label for="form7">Task Description</label>
+</div>
+
+
+        </div>
+         <div class="md-form mb-5">
+         <div class="md-form">
+  <input type="date" formControlName="fromDate"  id="fromDate" class="form-control" mdbInput>
+  <label for="input">Choose your date</label>
+</div> To 
+ <div class="md-form">
+  <input type="date" id="toDate"  formControlName="toDate"  class="form-control" mdbInput>
+  <label for="input">Choose your date</label>
+</div>
+
+
+        </div>
+        <!-- <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="deep-orange" class="waves-light"  type="submit" mdbWavesEffect >Add</button>
+        
+      </div> -->
+       <input type="submit" value="Add"/>
+      </form >
+      
+    </div>
+  </div>
+</div>

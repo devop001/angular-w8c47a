@@ -1,0 +1,34 @@
+<!-- Card Light -->
+<div class="card">
+
+  <!-- Card content -->
+  <div class="card-body">
+   
+    <h4 class="card-title"> <mdb-checkbox [checked]="item.statusID == 1" (change)="ChangeStatus(item.statusID,item._id.$oid)" [default]="true">{{item.taskName}} </mdb-checkbox> </h4>
+    
+
+    <hr>
+    <!-- Text -->
+    <p class="card-text">{{item.taskDesc}}</p>
+    <!-- Link -->
+    <div class="dropdown" mdbDropdown>
+
+
+  <button mdbDropdownToggle mdbBtn color="primary" class="dropdown-toggle waves-light" type="button"
+    mdbWavesEffect>
+    Dropdown primary
+  </button>
+
+
+  <div class="dropdown-menu dropdown-primary">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
+  </div>
+
+</div>
+<!-- Card Light -->
