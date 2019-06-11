@@ -1,0 +1,16 @@
+
+  <div class="dropdown" mdbDropdown>
+
+
+  <button mdbDropdownToggle mdbBtn color="primary"
+ class="dropdown-toggle waves-light" type="button"
+    mdbWavesEffect>
+    {{selectedStatus}}
+  </button>
+
+<div class="dropdown-menu dropdown-primary">
+    <a class="dropdown-item" href="#"  (click)="toggle('All')">All</a>
+    <a class="dropdown-item" href="#"  (click)="toggle('Pending')">Pending</a>
+    <a class="dropdown-item" href="#"  (click)="toggle('Completed')">Completed</a>
+  </div>
+  </div>

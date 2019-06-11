@@ -17,6 +17,7 @@ import { HttpDataService } from './basic-http.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import {Configuration} from './appconstants';
+import { TodofilterComponent } from './to-do/todofilter/todofilter.component';
 
 
 // For MDB Angular Pro
@@ -25,7 +26,7 @@ import {Configuration} from './appconstants';
   imports: [ BrowserModule, FormsModule, ModalModule,
       ReactiveFormsModule,HttpClientModule,
 MDBBootstrapModule.forRoot() ],
-  declarations: [ AppComponent, HelloComponent, ToDoComponent, ToDoDetailComponent, HeaderComponent, ToDoAddComponent ],
+  declarations: [ AppComponent, HelloComponent, ToDoComponent, ToDoDetailComponent, HeaderComponent, ToDoAddComponent, TodofilterComponent ],
   bootstrap:    [ AppComponent ],
   providers: [EventEmitterServiceService, DataService, HttpClient, Configuration,HttpDataService]
 })

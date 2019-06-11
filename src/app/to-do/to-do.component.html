@@ -1,3 +1,9 @@
 
+<mdb-card>
+  <!--Card content-->
+  <mdb-card-body>
+    <app-todofilter (ChangeFilter)="onFilterChange($event)"></app-todofilter>
+    </mdb-card-body>
+</mdb-card>
 <app-to-do-detail *ngFor="let item of task"  [item]="item">{{item}}</app-to-do-detail>
 
