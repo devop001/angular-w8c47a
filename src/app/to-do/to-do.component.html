@@ -1,8 +1,12 @@
 
 <mdb-card>
   <!--Card content-->
+  
   <mdb-card-body>
     <app-todofilter (ChangeFilter)="onFilterChange($event)"></app-todofilter>
+     <div class="spinner-grow"  *ngIf="isLoading" role="status">
+         <span class="sr-only text-center" >Loading...</span>
+     </div>
     </mdb-card-body>
 </mdb-card>
 <app-to-do-detail *ngFor="let item of task"  [item]="item">{{item}}</app-to-do-detail>

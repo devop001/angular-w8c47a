@@ -12,6 +12,7 @@ export class ToDoComponent implements OnInit {
   
    @Input() public task:Array<any>;
    currentStatusID:number;
+   isLoading:boolean;
    constructor(    
    
     private ser: HttpDataService,
@@ -52,18 +53,22 @@ export class ToDoComponent implements OnInit {
 
     loadList(statusID:number)
     {
+       this.isLoading =true;
        
        if(statusID > -1)
        {
         this.ser.getAll("task","q={'statusID': " + statusID + "}").subscribe(
             (val) => {
             this.task = val;
+               this.isLoading =false;
             console.log(this.task);
           },
           response => {
+            this.isLoading =false;
               console.log("POST call in error", response);
           },
           () => {
+            this.isLoading =false;
               console.log("The POST observable is now completed.");
           });
        }
@@ -71,13 +76,16 @@ export class ToDoComponent implements OnInit {
        {
           this.ser.getAll("task","").subscribe(
             (val) => {
+            this.isLoading =false;
             this.task = val;
             console.log(this.task);
           },
           response => {
+              this.isLoading =false;
               console.log("POST call in error", response);
           },
           () => {
+              this.isLoading =false;
               console.log("The POST observable is now completed.");
           });
        }
